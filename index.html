@@ -49,10 +49,17 @@
           one place.
         </p>
         <div class="signup signup--hero" data-signup></div>
+        <p class="founder-line">
+          <span class="founder-badge">Founding 100</span>
+          Lifetime founder pricing, free setup and a direct line to the team<span data-founder-left></span>
+        </p>
         <ul class="agent-chips" aria-label="Your agents">
           <li style="--c: var(--mkt)"><span></span>Marketing AI</li>
           <li style="--c: var(--sales)"><span></span>Sales AI</li>
           <li style="--c: var(--ops)"><span></span>Operations AI</li>
+          <li class="chip-classified" title="Revealed at launch">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.6" /><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7" /></svg>Agent 04 · classified
+          </li>
         </ul>
 
         <figure class="stage">
@@ -110,6 +117,34 @@
           </div>
         </div>
         <p class="small-note">Illustrative examples of the work your agents will do.</p>
+      </section>
+
+      <!-- ============ LEADS TEASER ============ -->
+      <section class="leads" id="leads" aria-labelledby="leads-title">
+        <div class="leads-head">
+          <h2 class="section-title" id="leads-title">See your first 10 leads.<br /><span class="muted">Before anyone else does.</span></h2>
+          <p>Tell us what you sell and where. We'll preview the kind of buyers your Sales AI would go after on day one.</p>
+        </div>
+        <form class="leads-form" novalidate>
+          <label>
+            <span>What do you sell?</span>
+            <input name="product" type="text" placeholder="e.g. Aluminium heat sinks" maxlength="60" required />
+          </label>
+          <label>
+            <span>Where do you sell?</span>
+            <input name="city" type="text" placeholder="e.g. Pune" maxlength="40" required />
+          </label>
+          <button type="submit">Show my leads</button>
+        </form>
+        <p class="leads-error" role="alert" hidden></p>
+        <div class="leads-out" hidden aria-live="polite">
+          <div class="leads-grid"></div>
+          <div class="leads-cta">
+            <p><b data-leads-locked>7 more leads are waiting.</b> Join the waitlist to unlock all 10 — fresh every day at launch.</p>
+            <a class="pill-btn" href="#join">Unlock all 10 <span class="pill-arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" /></svg></span></a>
+          </div>
+          <p class="small-note">Sample preview based on your answers — not real companies. At launch, real leads are researched from permitted business directories.</p>
+        </div>
       </section>
 
       <!-- ============ DEPARTMENT WORLDS ============ -->
@@ -453,6 +488,18 @@
             </div>
             <h3>Works with the tools you already use</h3>
             <p>Connects to your CRM, inbox, calendar, phone and social accounts — no more disconnected tools and spreadsheets.</p>
+          </article>
+          <article class="tile tile--classified">
+            <div class="tile-media tile-media--classified">
+              <div class="classified">
+                <span class="classified-id">AGENT 04</span>
+                <span class="classified-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.6" /><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7" /></svg>
+              </div>
+              <span class="media-chip">In training</span>
+            </div>
+            <h3>Agent 04 — classified</h3>
+            <p>A fourth department is in training. Waitlist members see it first, at launch.</p>
           </article>
         </div>
       </section>

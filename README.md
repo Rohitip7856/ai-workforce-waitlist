@@ -22,7 +22,7 @@ Add `?reset` to the URL to clear your own test signup.
 
 ## Before launch
 
-- **Save real signups.** Set `VITE_WAITLIST_ENDPOINT` in `.env` to an endpoint (e.g. a Supabase Edge Function) that accepts `POST { email, ref, code }` and `POST { code, segment }`. Without it, signups are only remembered in the visitor's own browser.
+- **Save real signups.** Create a Supabase project, run `supabase/migrations/20261118_waitlist.sql`, then set `VITE_SUPABASE_URL` and `VITE_SUPABASE_KEY` (the publishable key) in `.env.local` and in Vercel's environment variables. That turns on saved signups, place in line, referral jumps and the live "spots left" count. Without them, signups are only remembered in the visitor's own browser.
 - **Brand name.** "AI Workforce" is a placeholder in `index.html`.
 - **Privacy page.** The "Privacy" links point to `#privacy`.
 

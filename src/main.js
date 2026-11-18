@@ -1,7 +1,8 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
-import { mountSignups } from './signup.js';
+import { mountSignups, getStats } from './signup.js';
+import { mountLeads } from './leads.js';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.ticker.lagSmoothing(0);
@@ -129,6 +130,28 @@ const LANES = {
 };
 document.querySelectorAll('[data-lane-track]').forEach((grid) => {
   grid.innerHTML = LANES[grid.dataset.laneTrack].join('');
+});
+
+// Suspense: the last two Operations steps stay locked until the visitor joins.
+const LOCK_SVG =
+  '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.6" /><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7" /></svg>';
+[...document.querySelectorAll('[data-lane-track="ops"] .work')].slice(2).forEach((card) => {
+  card.classList.add('is-locked');
+  card.insertAdjacentHTML(
+    'beforeend',
+    `<a class="lock-veil" href="#join">${LOCK_SVG}<b>Members only</b><small>Join to see how the order gets delivered</small></a>`,
+  );
+});
+
+/* ---------- Leads teaser ---------- */
+mountLeads();
+
+/* ---------- Founding 100: real spots left, only when the live count is available ---------- */
+getStats().then((s) => {
+  const el = document.querySelector('[data-founder-left]');
+  if (!el || !s || typeof s.total !== 'number') return;
+  const left = Math.max(0, 100 - s.total);
+  el.textContent = left > 0 ? ` — ${left} of 100 spots left` : ' — all 100 founder spots are taken';
 });
 
 /* ---------- While you sleep: notes arrive one by one ---------- */
