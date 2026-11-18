@@ -95,7 +95,7 @@ const LANES = {
       'sales',
       '9:30 AM',
       'Leads found',
-      `<div class="mock-card"><div class="mock-top"><div><small>Own research · 10 new today</small><b>Voltline Power Systems</b></div><span class="ring" style="--v:92">92</span></div></div>
+      `<div class="mock-card"><div class="mock-top"><div><small>Found by its own research</small><b>Voltline Power Systems</b></div><span class="ring" style="--v:92">92</span></div></div>
        <div class="mock-card"><small>Why it fits</small><b>Makes inverters that need heat sinks</b><small>Pune · 200–500 staff</small></div>`,
     ),
     photo('sales', '11:40 AM', 'Call made', '/img/photo-call.webp', 'Interested — wants 500 units', 'Cold call · summary saved to CRM'),

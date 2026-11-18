@@ -288,8 +288,8 @@ const SALES_CARDS = [
   },
   (g, w, h) => {
     glass(g, w, h, 'rgba(245,185,66,0.55)');
-    txt(g, 'Qualified today', 40, 70, 26, '#9aa8d6', 500);
-    txt(g, '10/10', 40, 175, 96, '#fff', 800, DOTS);
+    txt(g, 'Best match', 40, 70, 26, '#9aa8d6', 500);
+    txt(g, '92/100', 40, 175, 96, '#fff', 800, DOTS);
     for (let i = 0; i < 10; i++) {
       g.beginPath();
       g.arc(52 + i * 52, 240, 16, 0, TAU);

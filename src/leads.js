@@ -1,5 +1,5 @@
 /*
- * "See your first 10 leads" teaser.
+ * "See your future customers" leads teaser.
  * Turns "what you sell" + "where" into a sample preview of buyer types (no real company names).
  * 3 leads are visible; 7 stay locked until the visitor joins the waitlist (body.is-member).
  */
@@ -145,7 +145,7 @@ export function mountLeads() {
   const refreshCta = () => {
     if (document.body.classList.contains('is-member')) {
       ctaText.innerHTML =
-        '<b>All 10 unlocked.</b> At launch your Sales AI finds real ones like these — fresh every day.';
+        '<b>All unlocked.</b> At launch your Sales AI finds real buyers like these for you.';
       out.querySelector('.leads-cta .pill-btn').hidden = true;
     }
   };
