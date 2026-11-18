@@ -69,14 +69,14 @@
             <div class="stage-status">
               <span class="live-dot"></span>
               <b data-stage-title>Your team</b>
-              <span data-stage-desc>Three agents, one control centre</span>
+              <span data-stage-desc>Three agents, one Business AI Manager</span>
             </div>
             <div class="stage-tabs" role="tablist" aria-label="Show an agent">
               <button role="tab" data-formation="0" aria-selected="true">Team</button>
               <button role="tab" data-formation="1">Marketing</button>
               <button role="tab" data-formation="2">Sales</button>
               <button role="tab" data-formation="3">Operations</button>
-              <button role="tab" data-formation="4">Control centre</button>
+              <button role="tab" data-formation="4">AI Manager</button>
             </div>
           </div>
           <figcaption>Live 3D preview of your AI workforce.</figcaption>
@@ -87,33 +87,51 @@
       <section class="feed" aria-labelledby="feed-title">
         <h2 class="section-title" id="feed-title">A full team,<br /><span class="muted">clocked in around the clock.</span></h2>
         <p class="feed-sub">
-          Follow one order through your AI team — from an Instagram enquiry to a delivered, invoiced order. Marketing brings
-          the customer in, Sales closes the deal, Operations delivers.
+          Two ways new orders reach you, on the same day. Marketing AI turns your posts, ads and comments into orders.
+          Sales AI goes out and finds its own customers. Both send won orders to Operations AI — and all three report to
+          your Business AI Manager.
         </p>
         <div class="lanes">
           <div class="lane" data-lane="mkt" style="--c: var(--mkt)">
             <div class="lane-head">
-              <span class="lane-step">01</span><b>Marketing AI</b><span class="lane-what">gets your business seen</span>
+              <span class="lane-step">01</span><b>Marketing AI</b><span class="lane-what">ads, reels, comments — and the enquiries they bring</span>
+              <span class="lane-path">Path 1 · Inbound</span>
             </div>
             <div class="lane-grid" data-lane-track="mkt"></div>
           </div>
-          <div class="lane-link" style="--c: var(--mkt)">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>Enquiry handed to Sales AI
+          <div class="lane-link lane-link--parallel" style="--c: var(--sales)">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3v10M10.5 3v10" /></svg>Meanwhile, working on its own
           </div>
           <div class="lane" data-lane="sales" style="--c: var(--sales)">
             <div class="lane-head">
-              <span class="lane-step">02</span><b>Sales AI</b><span class="lane-what">turns interest into orders</span>
+              <span class="lane-step">02</span><b>Sales AI</b><span class="lane-what">finds its own customers by call and email</span>
+              <span class="lane-path">Path 2 · Outbound</span>
             </div>
             <div class="lane-grid" data-lane-track="sales"></div>
           </div>
-          <div class="lane-link" style="--c: var(--sales)">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>Won order handed to Operations AI
+          <div class="lane-link" style="--c: var(--ops)">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>Both paths send won orders to Operations AI
           </div>
           <div class="lane" data-lane="ops" style="--c: var(--ops)">
             <div class="lane-head">
               <span class="lane-step">03</span><b>Operations AI</b><span class="lane-what">delivers, bills and reports</span>
             </div>
             <div class="lane-grid" data-lane-track="ops"></div>
+          </div>
+          <div class="lane-link" style="--c: var(--accent)">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>All three report to one manager
+          </div>
+          <div class="manager">
+            <div class="manager-id">
+              <span class="manager-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="11" rx="4" /><path d="M12 7V4M9.5 12h.01M14.5 12h.01" /></svg></span>
+              <div><b>Business AI Manager</b><small>Watches all three agents and sends you one report every evening</small></div>
+            </div>
+            <ul class="manager-report">
+              <li style="--c: var(--mkt)"><i></i><span>Marketing AI</span><b>46 comments answered · 1 order</b></li>
+              <li style="--c: var(--sales)"><i></i><span>Sales AI</span><b>10 new leads · 1 order</b></li>
+              <li style="--c: var(--ops)"><i></i><span>Operations AI</span><b>700 units in production</b></li>
+              <li class="manager-total"><span>Today</span><b>2 orders · ₹4,76,000</b></li>
+            </ul>
           </div>
         </div>
         <p class="small-note">Illustrative examples of the work your agents will do.</p>
@@ -180,8 +198,8 @@
               <p class="chapter-kicker"><i></i>Marketing AI · Department 01</p>
               <h3>Where your brand gets seen.</h3>
               <p>
-                It plans the month, creates posts, reels and ads, publishes them and answers every comment — a creative
-                agency that never clocks out.
+                It plans the month, creates posts, reels and ads, answers every comment — and handles the enquiries they
+                bring until they become orders.
               </p>
               <ul class="chapter-stats">
                 <li><b>5</b><span>posts a week</span></li>
@@ -196,8 +214,8 @@
               <p class="chapter-kicker"><i></i>Sales AI · Department 02</p>
               <h3>Where leads become revenue.</h3>
               <p>
-                Thousands of prospects in, ten qualified leads out — scored, contacted and followed up until the deal is
-                ready for you to close.
+                Your independent salesperson. It finds its own prospects, calls and emails them, and follows up until the
+                order is won — no marketing lead needed.
               </p>
               <ul class="chapter-stats">
                 <li><b>10</b><span>qualified leads a day</span></li>
@@ -212,8 +230,8 @@
               <p class="chapter-kicker"><i></i>Operations AI · Department 03</p>
               <h3>Where the work runs itself.</h3>
               <p>
-                Orders, quotes, invoices, stock and reminders flow between agents automatically — every task tracked, every
-                handoff on time.
+                Orders from Marketing AI and Sales AI land here — production, stock, dispatch and invoices handled, every
+                task tracked and reported.
               </p>
               <ul class="chapter-stats">
                 <li><b>10</b><span>assistants in one</span></li>
@@ -438,7 +456,7 @@
               <span class="media-chip">Posts · reels · ads</span>
             </div>
             <h3>Marketing AI</h3>
-            <p>Plans the month, creates the content, publishes it and answers your comments and enquiries.</p>
+            <p>Runs your ads, reels and posts, answers comments and turns the enquiries they bring into orders.</p>
           </article>
           <article class="tile" style="--tint: #efe6d6">
             <div class="tile-media">
@@ -446,7 +464,7 @@
               <span class="media-chip">10 qualified leads a day</span>
             </div>
             <h3>Sales AI</h3>
-            <p>Finds, scores, contacts and follows up with prospects — then hands negotiation to your salesperson.</p>
+            <p>Finds its own customers, calls and emails them and follows up until the order is won — like an independent salesperson.</p>
           </article>
           <article class="tile" style="--tint: #e8e6d8">
             <div class="tile-media">
@@ -454,15 +472,15 @@
               <span class="media-chip">Orders · quotes · invoices</span>
             </div>
             <h3>Operations AI</h3>
-            <p>Email, meetings, orders, quotations, invoices, stock alerts and daily reports.</p>
+            <p>Takes won orders from both Marketing AI and Sales AI — stock, production, dispatch and invoices.</p>
           </article>
           <article class="tile" style="--tint: #ebe4da">
             <div class="tile-media">
               <img src="/img/field-control.webp" alt="A business owner reviewing a performance dashboard on a laptop" loading="lazy" />
-              <span class="media-chip">One shared memory</span>
+              <span class="media-chip">One report to you, daily</span>
             </div>
-            <h3>One control centre</h3>
-            <p>Every agent shares your customers, history and goals — so nothing falls through the cracks.</p>
+            <h3>Business AI Manager</h3>
+            <p>All three agents report here. It shares your customers, history and goals with each one — and reports back to you.</p>
           </article>
           <article class="tile" style="--tint: #f2e6d8">
             <div class="tile-media tile-media--ui">
@@ -539,8 +557,8 @@
             <summary>What is AI Workforce?</summary>
             <p>
               A team of AI agents for your business. Sales AI finds and follows up with customers, Marketing AI runs your
-              content and campaigns, and Operations AI handles everyday tasks. A central orchestrator gives each one its
-              work and reports results on one dashboard.
+              content, ads and enquiries, and Operations AI delivers the orders both of them win. A Business AI Manager
+              oversees all three and reports results to you on one dashboard.
             </p>
           </details>
           <details>

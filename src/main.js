@@ -66,7 +66,8 @@ const photo = (agent, time, label, src, title, sub) =>
     time,
   )}<b>${title}</b><small>${sub}</small></div>${done(label)}</div>`;
 
-// One order, told once: Marketing brings the customer in → Sales closes → Operations delivers.
+// Two independent paths to an order — Marketing AI (inbound) and Sales AI (outbound) —
+// both hand won orders to Operations AI, and all three report to the Business AI Manager.
 const LANES = {
   mkt: [
     task(
@@ -74,34 +75,35 @@ const LANES = {
       '10:30 AM',
       'Campaign planned',
       `<div class="mock-card"><small>This week</small><b>Heat sinks for 5G routers</b>
-       <div class="tags" style="margin-top:8px"><span class="tag">3 posts</span><span class="tag">1 reel</span><span class="tag">Email</span></div></div>
+       <div class="tags" style="margin-top:8px"><span class="tag">3 posts</span><span class="tag">1 reel</span><span class="tag">Ads</span></div></div>
        <div class="mock-card"><div class="mock-top"><b>Approved by you</b><span class="tag tag--green">Live</span></div></div>`,
     ),
-    photo('mkt', '11:00 AM', 'Reel published', '/img/photo-content.webp', 'Factory reel is live', 'Instagram and LinkedIn'),
+    photo('mkt', '11:00 AM', 'Reel and ad live', '/img/photo-content.webp', 'Factory reel is live', 'Instagram, LinkedIn and a ₹2,000 ad'),
     task(
       'mkt',
       '12:30 PM',
-      'Reach grew',
-      `<div class="mock-card"><small>Reach today</small><b class="big-time">+38%</b>
-       <div class="mini-bars"><i style="--h:35%"></i><i style="--h:50%"></i><i style="--h:45%"></i><i style="--h:72%"></i><i style="--h:100%"></i></div>
-       <small>The reel is your best post this month</small></div>`,
+      'Comments answered',
+      `<div class="mock-card"><small>Comments and DMs today</small><b class="big-time">46</b>
+       <small>All answered · average reply in 4 min</small></div>
+       <div class="mock-card"><small>New enquiry · Northwave Telecom</small><b>“Do you make custom heat sinks?”</b>
+       <div class="mock-top" style="margin-top:6px"><small>Marketing AI replied</small><span class="tag tag--green">Handling it</span></div></div>`,
     ),
-    photo('mkt', '1:15 PM', 'Enquiry captured', '/img/lane-insta.webp', '“Do you make custom heat sinks?”', 'Northwave Telecom · sent to Sales AI'),
+    photo('mkt', '1:15 PM', 'Enquiry closed', '/img/lane-insta.webp', 'Northwave confirmed 200 units', '₹1,36,000 · sent to Operations AI'),
   ],
   sales: [
     task(
       'sales',
-      '1:20 PM',
-      'Lead scored',
-      `<div class="mock-card"><div class="mock-top"><div><small>From Marketing AI</small><b>Northwave Telecom</b></div><span class="ring" style="--v:92">92</span></div></div>
-       <div class="mock-card"><small>Why it fits</small><b>Buys heat sinks for 4G and 5G radios</b><small>Pune · 200–500 staff</small></div>`,
+      '9:30 AM',
+      'Leads found',
+      `<div class="mock-card"><div class="mock-top"><div><small>Own research · 10 new today</small><b>Voltline Power Systems</b></div><span class="ring" style="--v:92">92</span></div></div>
+       <div class="mock-card"><small>Why it fits</small><b>Makes inverters that need heat sinks</b><small>Pune · 200–500 staff</small></div>`,
     ),
-    photo('sales', '2:10 PM', 'Call made', '/img/photo-call.webp', 'Interested — wants 500 units', 'Call summary saved to CRM'),
+    photo('sales', '11:40 AM', 'Call made', '/img/photo-call.webp', 'Interested — wants 500 units', 'Cold call · summary saved to CRM'),
     task(
       'sales',
       '3:00 PM',
-      'Quote sent',
-      `<div class="mock-card"><small>Quotation Q-0418</small><b>Northwave Telecom</b>
+      'Email and quote sent',
+      `<div class="mock-card"><small>Follow-up email · Quotation Q-0418</small><b>Voltline Power Systems</b>
        <div class="lines"><span style="width:90%"></span><span style="width:70%"></span></div>
        <div class="mock-top"><small>500 × HS-40</small><b>₹3,40,000</b></div></div>
        <div class="mock-card"><div class="mock-top"><b>You approved it</b><span class="tag tag--green">Sent</span></div></div>`,
@@ -112,20 +114,20 @@ const LANES = {
     task(
       'ops',
       '6:10 PM',
-      'Order created',
-      `<div class="mock-card"><small>From Sales AI</small><b>Northwave · 500 × HS-40</b></div>
-       <div class="mock-card"><small>Tasks opened</small><b>Material · Production · Dispatch · Invoice</b></div>`,
+      '2 orders created',
+      `<div class="mock-card"><div class="mock-top"><div><small>From Marketing AI</small><b>Northwave · 200 × HS-40</b></div></div></div>
+       <div class="mock-card"><div class="mock-top"><div><small>From Sales AI</small><b>Voltline · 500 × HS-40</b></div></div></div>`,
     ),
     task(
       'ops',
       '6:12 PM',
       'Stock checked',
-      `<div class="mock-card"><small>Aluminium 6063 sheet</small><b>Enough for this order</b>
-       <div class="meter meter--ops"><i style="--w:64%"></i></div><small>64% left after this order</small></div>
-       <div class="mock-card"><div class="mock-top"><b>Reorder drafted</b><span class="tag">Next month</span></div></div>`,
+      `<div class="mock-card"><small>Aluminium 6063 sheet</small><b>Enough for both orders</b>
+       <div class="meter meter--ops"><i style="--w:40%"></i></div><small>40% left after these orders</small></div>
+       <div class="mock-card"><div class="mock-top"><b>Reorder drafted</b><span class="tag">Next week</span></div></div>`,
     ),
-    photo('ops', 'Mon 9:00 AM', 'In production', '/img/photo-cnc.webp', '500 heat sinks on the line', 'Ready by Thursday'),
-    photo('ops', 'Thu 4:00 PM', 'Delivered', '/img/lane-van.webp', 'Order dispatched to Northwave', 'Invoice ₹3,40,000 sent automatically'),
+    photo('ops', 'Mon 9:00 AM', 'In production', '/img/photo-cnc.webp', '700 heat sinks on the line', 'Ready by Thursday'),
+    photo('ops', 'Thu 4:00 PM', 'Delivered', '/img/lane-van.webp', 'Both orders dispatched', '2 invoices · ₹4,76,000 sent automatically'),
   ],
 };
 document.querySelectorAll('[data-lane-track]').forEach((grid) => {
@@ -139,7 +141,7 @@ const LOCK_SVG =
   card.classList.add('is-locked');
   card.insertAdjacentHTML(
     'beforeend',
-    `<a class="lock-veil" href="#join">${LOCK_SVG}<b>Members only</b><small>Join to see how the order gets delivered</small></a>`,
+    `<a class="lock-veil" href="#join">${LOCK_SVG}<b>Members only</b><small>Join to see how the orders get delivered</small></a>`,
   );
 });
 
@@ -247,11 +249,11 @@ const tabs = [...document.querySelectorAll('[data-formation]')];
 const titleEl = document.querySelector('[data-stage-title]');
 const descEl = document.querySelector('[data-stage-desc]');
 const FORMATIONS = [
-  ['Your team', 'Three agents, one control centre'],
-  ['Marketing AI', 'Campaigns, content and reach in a creative studio'],
-  ['Sales AI', 'Prospects in, qualified leads and revenue out'],
-  ['Operations AI', 'Connected systems running every workflow'],
-  ['Control centre', 'One shared memory for the whole business'],
+  ['Your team', 'Three agents, one Business AI Manager'],
+  ['Marketing AI', 'Ads, reels and comments — and the enquiries they bring'],
+  ['Sales AI', 'Finds its own customers by call and email'],
+  ['Operations AI', 'Delivers every order, from either path'],
+  ['Business AI Manager', 'All three agents report here, then to you'],
 ];
 let current = 0;
 let autoTimer = null;
