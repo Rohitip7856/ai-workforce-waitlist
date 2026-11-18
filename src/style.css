@@ -642,102 +642,166 @@ img {
 .lane-link--parallel svg {
   animation: none;
 }
-/* Business AI Manager: everyone reports here */
-.manager {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
-  gap: 20px;
-  align-items: center;
+/* Business AI Manager hub: agents and staff report in, work goes out to your team */
+.hub {
   width: min(var(--wrap), 100% - 2 * var(--gutter));
   margin: 0 auto;
-  padding: 20px 22px;
+  padding: 24px;
   background: var(--surface);
-  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
-  border-radius: 22px;
-  box-shadow: 0 18px 40px -28px rgba(60, 30, 10, 0.35);
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-radius: 24px;
+  box-shadow: 0 24px 50px -30px rgba(60, 30, 10, 0.4);
 }
-.manager-id {
+.hub-head {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  align-items: flex-start;
+  gap: 16px;
 }
-.manager-id b {
+.hub-kicker {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.hub-kicker .lane-step {
+  --c: var(--accent);
+}
+.hub-head b {
   display: block;
   font-family: var(--display);
-  font-size: 21px;
+  font-size: 26px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
-.manager-id small {
+.hub-head small {
   display: block;
-  margin-top: 2px;
-  font-size: 14px;
-  line-height: 1.4;
+  max-width: 44rem;
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 1.45;
   color: var(--soft);
 }
 .manager-icon {
   flex: none;
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   color: #fff;
   background: var(--accent);
-  border-radius: 14px;
+  border-radius: 15px;
 }
 .manager-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.manager-report {
+.hub-cols {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+.hub-col {
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 18px;
+}
+.hub-label {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hub-list {
+  display: grid;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.manager-report li {
+.hub-list li {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px 14px;
-  background: color-mix(in srgb, var(--c, var(--ink)) 7%, var(--bg));
-  border-radius: 14px;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
 }
-.manager-report li i {
-  width: 8px;
-  height: 8px;
+.hub-list li > div {
+  flex: 1;
+  min-width: 0;
+}
+.hub-list li > i {
+  flex: none;
+  width: 9px;
+  height: 9px;
   background: var(--c);
   border-radius: 50%;
 }
-.manager-report span {
+.hub-list span:not(.tag) {
+  display: block;
   font-size: 12px;
   color: var(--soft);
 }
-.manager-report b {
-  font-size: 14px;
+.hub-list b {
+  display: block;
+  font-size: 14.5px;
   font-weight: 600;
   line-height: 1.3;
 }
-.manager-report .manager-total {
+.tag--warn {
+  color: #8a5a12;
+  background: #f6ead2;
+  border-color: #ead5ab;
+}
+.hub-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-top: 16px;
+  padding: 14px 18px;
   color: #fff;
   background: var(--ink);
+  border-radius: 14px;
 }
-.manager-report .manager-total span {
+.hub-foot span {
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.65);
 }
+.hub-foot b {
+  font-size: 15px;
+  font-weight: 600;
+}
 @media (max-width: 960px) {
-  .manager {
+  .hub-cols {
     grid-template-columns: minmax(0, 1fr);
   }
-  .manager-report {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 560px) {
+  .hub {
+    padding: 16px;
+  }
+  .hub-head b {
+    font-size: 22px;
+  }
+  .hub-col {
+    padding: 12px;
   }
 }
 @media (max-width: 560px) {

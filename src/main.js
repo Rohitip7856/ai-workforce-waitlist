@@ -66,8 +66,8 @@ const photo = (agent, time, label, src, title, sub) =>
     time,
   )}<b>${title}</b><small>${sub}</small></div>${done(label)}</div>`;
 
-// Two independent paths to an order — Marketing AI (inbound) and Sales AI (outbound) —
-// both hand won orders to Operations AI, and all three report to the Business AI Manager.
+// Two independent paths to an order — Marketing AI (inbound) and Sales AI (outbound). Both report to the
+// Business AI Manager, which assigns work to the company's team; Operations AI helps that team finish it.
 const LANES = {
   mkt: [
     task(
@@ -88,7 +88,7 @@ const LANES = {
        <div class="mock-card"><small>New enquiry · Northwave Telecom</small><b>“Do you make custom heat sinks?”</b>
        <div class="mock-top" style="margin-top:6px"><small>Marketing AI replied</small><span class="tag tag--green">Handling it</span></div></div>`,
     ),
-    photo('mkt', '1:15 PM', 'Enquiry closed', '/img/lane-insta.webp', 'Northwave confirmed 200 units', '₹1,36,000 · sent to Operations AI'),
+    photo('mkt', '1:15 PM', 'Enquiry closed', '/img/lane-insta.webp', 'Northwave confirmed 200 units', '₹1,36,000 · reported to Business AI Manager'),
   ],
   sales: [
     task(
@@ -108,15 +108,15 @@ const LANES = {
        <div class="mock-top"><small>500 × HS-40</small><b>₹3,40,000</b></div></div>
        <div class="mock-card"><div class="mock-top"><b>You approved it</b><span class="tag tag--green">Sent</span></div></div>`,
     ),
-    photo('sales', '6:05 PM', 'Order won', '/img/lane-signing.webp', 'Purchase order signed', '₹3,40,000 · sent to Operations AI'),
+    photo('sales', '6:05 PM', 'Order won', '/img/lane-signing.webp', 'Purchase order signed', '₹3,40,000 · reported to Business AI Manager'),
   ],
   ops: [
     task(
       'ops',
       '6:10 PM',
-      '2 orders created',
-      `<div class="mock-card"><div class="mock-top"><div><small>From Marketing AI</small><b>Northwave · 200 × HS-40</b></div></div></div>
-       <div class="mock-card"><div class="mock-top"><div><small>From Sales AI</small><b>Voltline · 500 × HS-40</b></div></div></div>`,
+      'Tasks prepared',
+      `<div class="mock-card"><small>From Business AI Manager</small><b>2 orders · 700 × HS-40</b></div>
+       <div class="mock-card"><small>Ready for your team</small><b>Job card for production · material list for stores</b></div>`,
     ),
     task(
       'ops',
@@ -126,8 +126,8 @@ const LANES = {
        <div class="meter meter--ops"><i style="--w:40%"></i></div><small>40% left after these orders</small></div>
        <div class="mock-card"><div class="mock-top"><b>Reorder drafted</b><span class="tag">Next week</span></div></div>`,
     ),
-    photo('ops', 'Mon 9:00 AM', 'In production', '/img/photo-cnc.webp', '700 heat sinks on the line', 'Ready by Thursday'),
-    photo('ops', 'Thu 4:00 PM', 'Delivered', '/img/lane-van.webp', 'Both orders dispatched', '2 invoices · ₹4,76,000 sent automatically'),
+    photo('ops', 'Mon 9:00 AM', 'In production', '/img/photo-cnc.webp', '700 heat sinks on the line', 'Production team · ready by Thursday'),
+    photo('ops', 'Thu 4:00 PM', 'Delivered', '/img/lane-van.webp', 'Both orders dispatched', 'Dispatch team · 2 invoices sent by Operations AI'),
   ],
 };
 document.querySelectorAll('[data-lane-track]').forEach((grid) => {
@@ -141,7 +141,7 @@ const LOCK_SVG =
   card.classList.add('is-locked');
   card.insertAdjacentHTML(
     'beforeend',
-    `<a class="lock-veil" href="#join">${LOCK_SVG}<b>Members only</b><small>Join to see how the orders get delivered</small></a>`,
+    `<a class="lock-veil" href="#join">${LOCK_SVG}<b>Members only</b><small>Join to see how your team delivers</small></a>`,
   );
 });
 
@@ -252,8 +252,8 @@ const FORMATIONS = [
   ['Your team', 'Three agents, one Business AI Manager'],
   ['Marketing AI', 'Ads, reels and comments — and the enquiries they bring'],
   ['Sales AI', 'Finds its own customers by call and email'],
-  ['Operations AI', 'Delivers every order, from either path'],
-  ['Business AI Manager', 'All three agents report here, then to you'],
+  ['Operations AI', 'Helps your team deliver every order'],
+  ['Business AI Manager', 'Your AI agents and your staff report here'],
 ];
 let current = 0;
 let autoTimer = null;

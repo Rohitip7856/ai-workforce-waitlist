@@ -87,9 +87,9 @@
       <section class="feed" aria-labelledby="feed-title">
         <h2 class="section-title" id="feed-title">A full team,<br /><span class="muted">clocked in around the clock.</span></h2>
         <p class="feed-sub">
-          Two ways new orders reach you, on the same day. Marketing AI turns your posts, ads and comments into orders.
-          Sales AI goes out and finds its own customers. Both send won orders to Operations AI — and all three report to
-          your Business AI Manager.
+          Marketing AI and Sales AI win orders on their own. Both report to your Business AI Manager, along with your
+          staff. The manager assigns the work to the right person in your team, Operations AI helps them finish it, and
+          the manager follows up until it's done.
         </p>
         <div class="lanes">
           <div class="lane" data-lane="mkt" style="--c: var(--mkt)">
@@ -109,29 +109,48 @@
             </div>
             <div class="lane-grid" data-lane-track="sales"></div>
           </div>
+          <div class="lane-link" style="--c: var(--accent)">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>Both report to the Business AI Manager first
+          </div>
+          <div class="hub">
+            <div class="hub-head">
+              <span class="manager-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="11" rx="4" /><path d="M12 7V4M9.5 12h.01M14.5 12h.01" /></svg></span>
+              <div>
+                <p class="hub-kicker"><span class="lane-step">03</span>The one in charge</p>
+                <b>Business AI Manager</b>
+                <small>Your AI agents and your staff report here. It assigns the work to the right person and follows up until it's done.</small>
+              </div>
+            </div>
+            <div class="hub-cols">
+              <div class="hub-col">
+                <p class="hub-label">Reports in</p>
+                <ul class="hub-list">
+                  <li style="--c: var(--mkt)"><i></i><div><span>Marketing AI</span><b>Northwave · 200 units confirmed</b></div></li>
+                  <li style="--c: var(--sales)"><i></i><div><span>Sales AI</span><b>Voltline · 500 units won</b></div></li>
+                  <li style="--c: var(--ink)"><i></i><div><span>Your staff · Production in-charge</span><b>Machine 2 free from 2 PM</b></div></li>
+                </ul>
+              </div>
+              <div class="hub-col">
+                <p class="hub-label">Assigned to your team</p>
+                <ul class="hub-list">
+                  <li><div><span>Production in-charge</span><b>Run 700 × HS-40 from Monday</b></div><span class="tag tag--green">Accepted</span></li>
+                  <li><div><span>Stores</span><b>Issue aluminium sheet</b></div><span class="tag tag--green">Done</span></li>
+                  <li><div><span>Accounts</span><b>Raise 2 invoices</b></div><span class="tag">Queued</span></li>
+                  <li><div><span>Dispatch</span><b>Book a truck for Thursday</b></div><span class="tag tag--warn">Reminder sent</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="hub-foot"><span>8:00 PM · Report to you</span><b>2 orders · ₹4,76,000 · 4 tasks on track</b></div>
+          </div>
           <div class="lane-link" style="--c: var(--ops)">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>Both paths send won orders to Operations AI
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>Operations AI helps your team get it done
           </div>
           <div class="lane" data-lane="ops" style="--c: var(--ops)">
             <div class="lane-head">
-              <span class="lane-step">03</span><b>Operations AI</b><span class="lane-what">delivers, bills and reports</span>
+              <span class="lane-step">04</span><b>Operations AI</b><span class="lane-what">stock, job cards, dispatch and invoices</span>
+              <span class="lane-path">Helps your team</span>
             </div>
             <div class="lane-grid" data-lane-track="ops"></div>
-          </div>
-          <div class="lane-link" style="--c: var(--accent)">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>All three report to one manager
-          </div>
-          <div class="manager">
-            <div class="manager-id">
-              <span class="manager-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="11" rx="4" /><path d="M12 7V4M9.5 12h.01M14.5 12h.01" /></svg></span>
-              <div><b>Business AI Manager</b><small>Watches all three agents and sends you one report every evening</small></div>
-            </div>
-            <ul class="manager-report">
-              <li style="--c: var(--mkt)"><i></i><span>Marketing AI</span><b>46 comments answered · 1 order</b></li>
-              <li style="--c: var(--sales)"><i></i><span>Sales AI</span><b>8 calls · 5 emails · 1 order</b></li>
-              <li style="--c: var(--ops)"><i></i><span>Operations AI</span><b>700 units in production</b></li>
-              <li class="manager-total"><span>Today</span><b>2 orders · ₹4,76,000</b></li>
-            </ul>
           </div>
         </div>
         <p class="small-note">Illustrative examples of the work your agents will do.</p>
@@ -230,8 +249,8 @@
               <p class="chapter-kicker"><i></i>Operations AI · Department 03</p>
               <h3>Where the work runs itself.</h3>
               <p>
-                Orders from Marketing AI and Sales AI land here — production, stock, dispatch and invoices handled, every
-                task tracked and reported.
+                Your Business AI Manager assigns the work to your team. Operations AI handles the busywork — stock, job
+                cards, dispatch and invoices.
               </p>
               <ul class="chapter-stats">
                 <li><b>10</b><span>assistants in one</span></li>
@@ -472,7 +491,7 @@
               <span class="media-chip">Orders · quotes · invoices</span>
             </div>
             <h3>Operations AI</h3>
-            <p>Takes won orders from both Marketing AI and Sales AI — stock, production, dispatch and invoices.</p>
+            <p>Helps your team finish the work the manager assigns — stock, production plans, dispatch and invoices.</p>
           </article>
           <article class="tile" style="--tint: #ebe4da">
             <div class="tile-media">
@@ -480,7 +499,7 @@
               <span class="media-chip">One report to you, daily</span>
             </div>
             <h3>Business AI Manager</h3>
-            <p>All three agents report here. It shares your customers, history and goals with each one — and reports back to you.</p>
+            <p>Marketing AI, Sales AI and your staff report here. It assigns work to the right person, follows up, and reports to you.</p>
           </article>
           <article class="tile" style="--tint: #f2e6d8">
             <div class="tile-media tile-media--ui">
@@ -559,8 +578,8 @@
             <summary>What is AI Workforce?</summary>
             <p>
               A team of AI agents for your business. Sales AI finds and follows up with customers, Marketing AI runs your
-              content, ads and enquiries, and Operations AI delivers the orders both of them win. A Business AI Manager
-              oversees all three and reports results to you on one dashboard.
+              content, ads and enquiries, and Operations AI helps your team deliver. A Business AI Manager collects reports
+              from the agents and your staff, assigns work to the right person, follows up and reports to you.
             </p>
           </details>
           <details>
