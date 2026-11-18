@@ -74,7 +74,7 @@ function template() {
         <button type="submit">${BTN_LABEL}</button>
       </div>
       <p class="error" role="alert" hidden></p>
-      <p class="fine">Launch news only. <a href="#privacy">Privacy</a></p>
+      <p class="fine">Launch news only. <a href="/privacy">Privacy</a></p>
     </form>
     <div class="joined" hidden>
       <p class="joined-title" tabindex="-1">You're on the list.</p>

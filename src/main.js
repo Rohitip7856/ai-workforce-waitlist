@@ -147,10 +147,13 @@ const LOCK_SVG =
 /* ---------- Leads teaser ---------- */
 mountLeads();
 
-/* ---------- Founding 100: real spots left, only when the live count is available ---------- */
+/* ---------- Founding 100: real spots left, shown once at least 20 businesses have joined ----------
+   Until then the line keeps its default text ("for the first 100 businesses"), so an early
+   visitor never sees "100 of 100 spots left" (which would say nobody has joined yet). */
+const SHOW_COUNT_FROM = 20;
 getStats().then((s) => {
   const el = document.querySelector('[data-founder-left]');
-  if (!el || !s || typeof s.total !== 'number') return;
+  if (!el || !s || typeof s.total !== 'number' || s.total < SHOW_COUNT_FROM) return;
   const left = Math.max(0, 100 - s.total);
   el.textContent = left > 0 ? ` — ${left} of 100 spots left` : ' — all 100 founder spots are taken';
 });

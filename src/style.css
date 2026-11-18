@@ -2458,7 +2458,7 @@ td.n::before {
   .chapter {
     align-items: flex-end;
     min-height: 140vh;
-    padding-bottom: 88px;
+    padding-bottom: 20px;
   }
   .chapter--intro {
     min-height: 110vh;
@@ -2475,16 +2475,25 @@ td.n::before {
   .chapter-card > p:not(.chapter-kicker) {
     font-size: 15px;
   }
+  .chapter-stats {
+    margin-top: 14px;
+  }
+  .chapter-stats li {
+    padding: 9px 10px;
+  }
   .chapter-stats b {
-    font-size: 22px;
+    font-size: 19px;
   }
   .worlds-shade {
     background: linear-gradient(0deg, rgba(5, 7, 26, 0.7), rgba(5, 7, 26, 0) 55%);
   }
+  /* On phones the department switcher sits at the top (under the site menu), so the
+     chapter text card resting at the bottom never covers it. */
   .worlds-nav {
+    top: 84px;
+    bottom: auto;
     left: 12px;
     right: 12px;
-    bottom: 14px;
     justify-content: space-between;
     transform: none;
   }
@@ -2593,7 +2602,7 @@ td.n::before {
   align-items: center;
   justify-content: center;
   gap: 6px 10px;
-  max-width: 34rem;
+  max-width: 46rem;
   margin: 16px auto 0;
   font-size: 14px;
   color: var(--soft);
