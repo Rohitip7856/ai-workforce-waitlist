@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Workforce — your AI team for sales, marketing and operations</title>
+    <meta
+      name="description"
+      content="An AI team that finds customers, runs your marketing, follows up on every lead and handles everyday operations. Join the waitlist."
+    />
+    <meta name="theme-color" content="#f4efe8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Doto:wght@600;800&family=Geist:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>AI Workforce</a>
+        <nav class="nav-links" aria-label="Main">
+          <a href="#departments">Departments</a>
+          <a href="#how">How it works</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a class="pill-btn" href="#join">
+          Join waitlist
+          <span class="pill-arrow" aria-hidden="true"
+            ><svg viewBox="0 0 16 16"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" /></svg
+          ></span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="top">
+        <div class="aura" aria-hidden="true"></div>
+        <p class="hero-chip"><span class="live-dot"></span>Early access opening soon</p>
+        <h1 class="hero-title">
+          <span class="line">Your AI workforce.</span>
+          <span class="line">Working while you work.</span>
+        </h1>
+        <p class="hero-sub">
+          An AI team that finds customers, runs your marketing, follows up on every lead and handles the busywork — all from
+          one place.
+        </p>
+        <div class="signup signup--hero" data-signup></div>
+        <ul class="agent-chips" aria-label="Your agents">
+          <li style="--c: var(--mkt)"><span></span>Marketing AI</li>
+          <li style="--c: var(--sales)"><span></span>Sales AI</li>
+          <li style="--c: var(--ops)"><span></span>Operations AI</li>
+        </ul>
+
+        <figure class="stage">
+          <div class="stage-screen">
+            <canvas id="scene" aria-label="Animated 3D view of the AI workforce" role="img"></canvas>
+            <img class="stage-fallback" src="/img/team.webp" alt="" />
+            <div class="stage-status">
+              <span class="live-dot"></span>
+              <b data-stage-title>Your team</b>
+              <span data-stage-desc>Three agents, one control centre</span>
+            </div>
+            <div class="stage-tabs" role="tablist" aria-label="Show an agent">
+              <button role="tab" data-formation="0" aria-selected="true">Team</button>
+              <button role="tab" data-formation="1">Marketing</button>
+              <button role="tab" data-formation="2">Sales</button>
+              <button role="tab" data-formation="3">Operations</button>
+              <button role="tab" data-formation="4">Control centre</button>
+            </div>
+          </div>
+          <figcaption>Live 3D preview of your AI workforce.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ============ FEED ============ -->
+      <section class="feed" aria-labelledby="feed-title">
+        <h2 class="section-title" id="feed-title">A full team,<br /><span class="muted">clocked in around the clock.</span></h2>
+        <p class="feed-sub">
+          Follow one order through your AI team — from an Instagram enquiry to a delivered, invoiced order. Marketing brings
+          the customer in, Sales closes the deal, Operations delivers.
+        </p>
+        <div class="lanes">
+          <div class="lane" data-lane="mkt" style="--c: var(--mkt)">
+            <div class="lane-head">
+              <span class="lane-step">01</span><b>Marketing AI</b><span class="lane-what">gets your business seen</span>
+            </div>
+            <div class="lane-grid" data-lane-track="mkt"></div>
+          </div>
+          <div class="lane-link" style="--c: var(--mkt)">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>Enquiry handed to Sales AI
+          </div>
+          <div class="lane" data-lane="sales" style="--c: var(--sales)">
+            <div class="lane-head">
+              <span class="lane-step">02</span><b>Sales AI</b><span class="lane-what">turns interest into orders</span>
+            </div>
+            <div class="lane-grid" data-lane-track="sales"></div>
+          </div>
+          <div class="lane-link" style="--c: var(--sales)">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" /></svg>Won order handed to Operations AI
+          </div>
+          <div class="lane" data-lane="ops" style="--c: var(--ops)">
+            <div class="lane-head">
+              <span class="lane-step">03</span><b>Operations AI</b><span class="lane-what">delivers, bills and reports</span>
+            </div>
+            <div class="lane-grid" data-lane-track="ops"></div>
+          </div>
+        </div>
+        <p class="small-note">Illustrative examples of the work your agents will do.</p>
+      </section>
+
+      <!-- ============ DEPARTMENT WORLDS ============ -->
+      <section class="worlds" id="departments" aria-labelledby="worlds-title">
+        <div class="worlds-pin">
+          <div class="worlds-frame">
+            <canvas
+              id="worlds-scene"
+              role="img"
+              aria-label="3D environments for the Marketing, Sales and Operations departments"
+            ></canvas>
+            <img class="worlds-fallback" src="/img/team.webp" alt="" />
+            <div class="worlds-shade" aria-hidden="true"></div>
+            <nav class="worlds-nav" aria-label="Departments">
+              <button type="button" data-dept="1" style="--c: var(--mkt-hot)"><i></i>Marketing</button>
+              <button type="button" data-dept="2" style="--c: var(--gold)"><i></i>Sales</button>
+              <button type="button" data-dept="3" style="--c: var(--ops)"><i></i>Operations</button>
+            </nav>
+          </div>
+        </div>
+
+        <div class="chapters">
+          <article class="chapter chapter--intro" data-chapter="0">
+            <div class="chapter-card">
+              <p class="chapter-kicker"><i></i>Your AI departments</p>
+              <h2 id="worlds-title">Step inside each department.</h2>
+              <p>Three specialist AI teams, each working in a world built for its job. Scroll to go in.</p>
+            </div>
+          </article>
+
+          <article class="chapter" data-chapter="1" style="--c: var(--mkt-hot)">
+            <div class="chapter-card">
+              <p class="chapter-kicker"><i></i>Marketing AI · Department 01</p>
+              <h3>Where your brand gets seen.</h3>
+              <p>
+                It plans the month, creates posts, reels and ads, publishes them and answers every comment — a creative
+                agency that never clocks out.
+              </p>
+              <ul class="chapter-stats">
+                <li><b>5</b><span>posts a week</span></li>
+                <li><b>2</b><span>reel concepts</span></li>
+                <li><b>1</b><span>blog, every week</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="chapter" data-chapter="2" style="--c: var(--gold)">
+            <div class="chapter-card">
+              <p class="chapter-kicker"><i></i>Sales AI · Department 02</p>
+              <h3>Where leads become revenue.</h3>
+              <p>
+                Thousands of prospects in, ten qualified leads out — scored, contacted and followed up until the deal is
+                ready for you to close.
+              </p>
+              <ul class="chapter-stats">
+                <li><b>10</b><span>qualified leads a day</span></li>
+                <li><b>100</b><span>point lead score</span></li>
+                <li><b>0</b><span>forgotten follow-ups</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="chapter" data-chapter="3" style="--c: var(--ops)">
+            <div class="chapter-card">
+              <p class="chapter-kicker"><i></i>Operations AI · Department 03</p>
+              <h3>Where the work runs itself.</h3>
+              <p>
+                Orders, quotes, invoices, stock and reminders flow between agents automatically — every task tracked, every
+                handoff on time.
+              </p>
+              <ul class="chapter-stats">
+                <li><b>10</b><span>assistants in one</span></li>
+                <li><b>24/7</b><span>workflows running</span></li>
+                <li><b>1</b><span>dashboard for you</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ WHILE YOU SLEEP ============ -->
+      <section class="night" aria-labelledby="night-title">
+        <div class="night-copy">
+          <h2 class="section-title" id="night-title">While you sleep,<br /><span class="muted">your workforce doesn't.</span></h2>
+          <p>
+            Follow-ups go out on time, quotes get drafted and tomorrow's leads are researched — so you start the day with
+            results, not a to-do list.
+          </p>
+        </div>
+        <div class="night-grid">
+          <figure class="photo photo--night">
+            <img src="/img/photo-night.webp" alt="A laptop glowing on a desk late at night" loading="lazy" />
+            <div class="note-stack">
+              <div class="note-card"><time>11:42 PM</time><b>3 follow-ups sent</b><small>Sales AI</small></div>
+              <div class="note-card"><time>1:15 AM</time><b>Quotation drafted · ₹3,40,000</b><small>Sales AI and Operations AI</small></div>
+              <div class="note-card"><time>5:30 AM</time><b>10 new leads researched</b><small>Sales AI</small></div>
+            </div>
+          </figure>
+          <figure class="photo photo--owner">
+            <img src="/img/photo-owner.webp" alt="A business owner at his desk with a laptop" loading="lazy" />
+            <div class="morning-card">
+              <small>8:30 AM · Your daily brief</small>
+              <b>Good morning. Two leads are ready to talk.</b>
+              <div class="tags"><span class="tag tag--blue">2 interested</span><span class="tag tag--green">1 quote to approve</span></div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ HOW IT WORKS ============ -->
+      <section class="how" id="how" aria-labelledby="how-title">
+        <h2 class="section-title center" id="how-title">How it works</h2>
+        <div class="how-grid">
+          <div class="how-steps">
+            <article class="step" data-step="0">
+              <h3>Learns your business<br /><span class="muted">in one conversation.</span></h3>
+              <p>
+                Tell it what you sell, who buys it and where. It builds your company profile, ideal customer and sales
+                territory — the brief every agent works from.
+              </p>
+              <div class="ui-card">
+                <div class="ui-head">
+                  <span class="ui-avatar">K</span>
+                  <div><b>Kaveri Thermal Pvt Ltd</b><small>Aluminium heat sinks · Pune</small></div>
+                  <span class="tag tag--green">Profile ready</span>
+                </div>
+                <div class="ui-label">Ideal customers</div>
+                <div class="tags">
+                  <span class="tag">Telecom equipment</span><span class="tag">Electronics</span
+                  ><span class="tag">Industrial machines</span><span class="tag">OEM distributors</span>
+                </div>
+                <div class="ui-stats">
+                  <div><span class="dot-num">4</span><small>products</small></div>
+                  <div><span class="dot-num">3</span><small>cities</small></div>
+                  <div><span class="dot-num">10</span><small>leads / day goal</small></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="step" data-step="1">
+              <h3>Finds 10 qualified leads<br /><span class="muted">every single day.</span></h3>
+              <p>
+                It searches permitted business directories and trade sources, scores every prospect out of 100 and explains
+                why — no made-up buying signals.
+              </p>
+              <div class="ui-card">
+                <div class="ui-row-head"><b>Today's mission</b><span class="tag tag--green">10 qualified</span></div>
+                <div class="bars">
+                  <div class="bar"><span>Telecom manufacturers</span><i style="--w: 40%; --c: var(--sales)"></i><b>4</b></div>
+                  <div class="bar"><span>Electronics makers</span><i style="--w: 30%; --c: var(--mkt)"></i><b>3</b></div>
+                  <div class="bar"><span>Industrial equipment</span><i style="--w: 20%; --c: var(--ops)"></i><b>2</b></div>
+                  <div class="bar"><span>Distributors and OEMs</span><i style="--w: 10%; --c: #e0a23b"></i><b>1</b></div>
+                </div>
+                <div class="lead-row">
+                  <span class="score">92</span>
+                  <div><b>Northwave Telecom Systems</b><small>Fits product, industry and territory</small></div>
+                  <span class="tag tag--blue">High priority</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="step" data-step="2">
+              <h3>Reaches out<br /><span class="muted">and never forgets a follow-up.</span></h3>
+              <p>
+                It writes the pitch, makes approved calls and emails, reads the reply and books the next step — so no lead
+                goes cold after the first call.
+              </p>
+              <div class="ui-card">
+                <div class="ui-row-head"><b>Northwave Telecom Systems</b><span class="tag tag--blue">Interested</span></div>
+                <ol class="timeline">
+                  <li><time>Mon 11:30</time><span>Call — interested, asked for a catalogue</span></li>
+                  <li><time>Mon 11:42</time><span>Catalogue and price list emailed</span></li>
+                  <li><time>Thu 16:00</time><span>Follow-up call scheduled</span></li>
+                  <li class="is-next"><time>Next</time><span>Draft quotation for 500 units</span></li>
+                </ol>
+              </div>
+            </article>
+
+            <article class="step" data-step="3">
+              <h3>Markets your brand<br /><span class="muted">like a small agency.</span></h3>
+              <p>
+                A monthly calendar, posts, reel scripts, a weekly blog and replies to comments — in your brand's voice, sent
+                to you for approval first.
+              </p>
+              <div class="ui-card">
+                <div class="ui-row-head"><b>This week</b><span class="tag tag--violet">8 pieces ready</span></div>
+                <div class="week">
+                  <div><small>Mon</small><span class="post">Post</span></div>
+                  <div><small>Tue</small><span class="post reel">Reel</span></div>
+                  <div><small>Wed</small><span class="post">Post</span></div>
+                  <div><small>Thu</small><span class="post blog">Blog</span></div>
+                  <div><small>Fri</small><span class="post">Post</span></div>
+                  <div><small>Sat</small><span class="post reel">Reel</span></div>
+                  <div><small>Sun</small><span class="post">Post</span></div>
+                </div>
+                <div class="approve-row">
+                  <span>Waiting for your approval</span>
+                  <button type="button" class="mini-btn" tabindex="-1">Approve all</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="step" data-step="4">
+              <h3>Runs the busywork<br /><span class="muted">and reports back to you.</span></h3>
+              <p>
+                Quotes, orders, invoices, stock and reminders move between agents automatically. You see it all on one
+                dashboard and approve what matters.
+              </p>
+              <div class="ui-card">
+                <div class="ui-row-head"><b>Enquiry · 500 aluminium heat sinks</b></div>
+                <ol class="flow">
+                  <li class="done"><span>Operations AI</span>Stock and capacity checked</li>
+                  <li class="done"><span>Sales AI</span>Quotation drafted · ₹3,40,000</li>
+                  <li class="wait"><span>You</span>Approve quotation</li>
+                  <li><span>Operations AI</span>Order, material and invoice tasks</li>
+                </ol>
+              </div>
+            </article>
+          </div>
+
+          <div class="how-loop" aria-hidden="true">
+            <div class="loop-sticky">
+              <svg class="loop-svg" viewBox="0 0 400 300">
+                <defs>
+                  <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse">
+                    <circle cx="2.5" cy="2.5" r="0.9" fill="#d6cabd" />
+                  </pattern>
+                  <pattern id="dots-on" width="5" height="5" patternUnits="userSpaceOnUse">
+                    <circle cx="2.5" cy="2.5" r="1.1" fill="#8c3a1e" />
+                  </pattern>
+                </defs>
+                <path
+                  class="loop-track"
+                  d="M200 280 H70 A50 50 0 0 1 20 230 V70 A50 50 0 0 1 70 20 H330 A50 50 0 0 1 380 70 V230 A50 50 0 0 1 330 280 Z"
+                />
+                <path
+                  class="loop-progress"
+                  pathLength="1"
+                  d="M200 280 H70 A50 50 0 0 1 20 230 V70 A50 50 0 0 1 70 20 H330 A50 50 0 0 1 380 70 V230 A50 50 0 0 1 330 280 Z"
+                />
+              </svg>
+              <div class="loop-pills"></div>
+              <!-- The AI robot that rides the loop as you scroll -->
+              <div class="loop-robot">
+                <div class="robot-lean">
+                  <svg class="robot" viewBox="0 0 60 74">
+                    <defs>
+                      <linearGradient id="robot-torso" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#c0602f" />
+                        <stop offset="1" stop-color="#8c3a1e" />
+                      </linearGradient>
+                    </defs>
+                    <ellipse class="robot-shadow" cx="30" cy="71" rx="13" ry="2.6" />
+                    <g class="robot-float">
+                      <ellipse class="robot-jet" cx="30" cy="61" rx="7" ry="3" />
+                      <line class="robot-stroke" x1="30" y1="12" x2="30" y2="6" />
+                      <circle class="robot-antenna" cx="30" cy="4.5" r="3.4" />
+                      <rect class="robot-ear" x="9.5" y="20" width="4.5" height="10" rx="2.25" />
+                      <rect class="robot-ear" x="46" y="20" width="4.5" height="10" rx="2.25" />
+                      <rect class="robot-head" x="13" y="12" width="34" height="25" rx="11" />
+                      <rect class="robot-visor" x="18" y="17.5" width="24" height="13.5" rx="6.75" />
+                      <g class="robot-eyes">
+                        <circle cx="25" cy="24" r="2.4" />
+                        <circle cx="35" cy="24" r="2.4" />
+                      </g>
+                      <path class="robot-smile" d="M26.6 28.2q3.4 2 6.8 0" />
+                      <rect class="robot-arm robot-arm--l" x="10.5" y="40" width="5" height="12" rx="2.5" />
+                      <rect class="robot-arm robot-arm--r" x="44.5" y="40" width="5" height="12" rx="2.5" />
+                      <rect class="robot-torso" x="17.5" y="39" width="25" height="18" rx="7.5" />
+                      <circle class="robot-core" cx="30" cy="48" r="3.3" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div class="loop-center">
+                <span class="dot-num" data-loop-count>01</span>
+                <small>of 05</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BENTO ============ -->
+      <section class="bento-wrap" id="agents" aria-labelledby="agents-title">
+        <h2 class="section-title center" id="agents-title">Built to run your business,<br />end to end.</h2>
+        <div class="bento">
+          <article class="tile tile--wide" style="--tint: #efe2d7">
+            <div class="tile-media">
+              <img src="/img/field-marketing.webp" alt="A marketing team planning content around a table of laptops and phones" loading="lazy" />
+              <span class="media-chip">Posts · reels · ads</span>
+            </div>
+            <h3>Marketing AI</h3>
+            <p>Plans the month, creates the content, publishes it and answers your comments and enquiries.</p>
+          </article>
+          <article class="tile" style="--tint: #efe6d6">
+            <div class="tile-media">
+              <img src="/img/field-sales.webp" alt="Two businessmen shaking hands on a closed deal" loading="lazy" style="object-position: 50% 40%" />
+              <span class="media-chip">10 qualified leads a day</span>
+            </div>
+            <h3>Sales AI</h3>
+            <p>Finds, scores, contacts and follows up with prospects — then hands negotiation to your salesperson.</p>
+          </article>
+          <article class="tile" style="--tint: #e8e6d8">
+            <div class="tile-media">
+              <img src="/img/field-ops.webp" alt="A forklift moving stock through a busy warehouse aisle" loading="lazy" style="object-position: 50% 70%" />
+              <span class="media-chip">Orders · quotes · invoices</span>
+            </div>
+            <h3>Operations AI</h3>
+            <p>Email, meetings, orders, quotations, invoices, stock alerts and daily reports.</p>
+          </article>
+          <article class="tile" style="--tint: #ebe4da">
+            <div class="tile-media">
+              <img src="/img/field-control.webp" alt="A business owner reviewing a performance dashboard on a laptop" loading="lazy" />
+              <span class="media-chip">One shared memory</span>
+            </div>
+            <h3>One control centre</h3>
+            <p>Every agent shares your customers, history and goals — so nothing falls through the cracks.</p>
+          </article>
+          <article class="tile" style="--tint: #f2e6d8">
+            <div class="tile-media tile-media--ui">
+              <div class="approval">
+                <div class="approval-card">
+                  <small>Needs your OK</small>
+                  <b>Quotation · Northwave Telecom</b>
+                  <span>500 units · ₹3,40,000</span>
+                  <div class="approval-actions"><span class="mini-btn">Approve</span><span class="mini-btn ghost">Edit</span></div>
+                </div>
+                <div class="approval-card behind"></div>
+              </div>
+            </div>
+            <h3>You stay in control</h3>
+            <p>Calls, posts and quotes follow rules you set. Anything sensitive waits for your approval.</p>
+          </article>
+          <article class="tile tile--wide" style="--tint: #ebe4da">
+            <div class="tile-media tile-media--ui">
+              <div class="integrations">
+                <span>CRM</span><span>Email</span><span>Calendar</span><span>Google Business Profile</span><span>Instagram</span
+                ><span>LinkedIn</span><span>Telephony</span><span>ERP</span><span>Spreadsheets</span>
+              </div>
+            </div>
+            <h3>Works with the tools you already use</h3>
+            <p>Connects to your CRM, inbox, calendar, phone and social accounts — no more disconnected tools and spreadsheets.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ COMPARE ============ -->
+      <section class="compare" aria-labelledby="compare-title">
+        <h2 class="section-title center" id="compare-title">AI Workforce versus<br /><span class="muted">the usual way.</span></h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr-only">Capability</span></th>
+                <th scope="col" class="us">AI Workforce</th>
+                <th scope="col">Hiring more staff</th>
+                <th scope="col">Marketing agency</th>
+                <th scope="col">Separate software</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Finds new customers every day</th><td class="us y">Yes</td><td class="p">Partly</td><td class="n">No</td><td class="n">No</td></tr>
+              <tr><th scope="row">Follows up on every lead</th><td class="us y">Yes</td><td class="p">Partly</td><td class="n">No</td><td class="p">Partly</td></tr>
+              <tr><th scope="row">Plans and posts your marketing</th><td class="us y">Yes</td><td class="p">Partly</td><td class="y">Yes</td><td class="p">Partly</td></tr>
+              <tr><th scope="row">Quotes, orders and reminders</th><td class="us y">Yes</td><td class="y">Yes</td><td class="n">No</td><td class="p">Partly</td></tr>
+              <tr><th scope="row">Works nights and weekends</th><td class="us y">Yes</td><td class="n">No</td><td class="n">No</td><td class="n">No</td></tr>
+              <tr><th scope="row">One view of the whole business</th><td class="us y">Yes</td><td class="n">No</td><td class="n">No</td><td class="n">No</td></tr>
+              <tr class="text-row"><th scope="row">Time to get going</th><td class="us">Days</td><td>Weeks to hire</td><td>2–4 weeks</td><td>You set it all up</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ FAQ ============ -->
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <h2 class="section-title" id="faq-title">Common<br />questions</h2>
+        <div class="faq-list">
+          <details open>
+            <summary>What is AI Workforce?</summary>
+            <p>
+              A team of AI agents for your business. Sales AI finds and follows up with customers, Marketing AI runs your
+              content and campaigns, and Operations AI handles everyday tasks. A central orchestrator gives each one its
+              work and reports results on one dashboard.
+            </p>
+          </details>
+          <details>
+            <summary>Who is it for?</summary>
+            <p>
+              Owners of small and growing businesses — manufacturers, distributors, service firms and retailers — who want
+              more customers and less repetitive work without hiring a bigger team.
+            </p>
+          </details>
+          <details>
+            <summary>Will it contact customers without asking me?</summary>
+            <p>
+              Only in ways you approve. You choose which calls, emails and posts can go out automatically. Negotiations,
+              complaints and anything sensitive are passed to you or your team.
+            </p>
+          </details>
+          <details>
+            <summary>Where does it find leads?</summary>
+            <p>
+              From permitted business directories, licensed lead databases, company websites, trade directories and industry
+              associations. It never invents buying intent or contact details, and it respects opt-outs.
+            </p>
+          </details>
+          <details>
+            <summary>Which tools does it connect to?</summary>
+            <p>Your CRM, email, calendar, phone system, Google Business Profile, social media accounts and ERP.</p>
+          </details>
+          <details>
+            <summary>When does it launch, and what does joining get me?</summary>
+            <p>
+              Early access opens in waves. People on the waitlist get in first, and you can tell us what you sell so we can
+              set up your agents for your industry.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- ============ FINAL CTA ============ -->
+      <section class="final" id="join" aria-labelledby="final-title">
+        <div class="aura aura--final" aria-hidden="true"></div>
+        <img class="final-img" src="/img/control.webp" alt="" loading="lazy" />
+        <h2 class="final-title" id="final-title">Hire your AI workforce<br /><span>before launch day.</span></h2>
+        <p class="hero-sub">Join the waitlist and be first in line when early access opens.</p>
+        <div class="signup signup--hero" data-signup></div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>AI Workforce</a>
+      <span>© 2026 AI Workforce</span>
+      <span>Photos from Unsplash</span>
+      <a href="#privacy" id="privacy">Privacy</a>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

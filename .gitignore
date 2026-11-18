@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+.env.*
+.vercel
+
+# Local-only files (not part of the website)
+AI workforce.pdf
+previews/
+.claude/
