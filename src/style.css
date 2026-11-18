@@ -1990,6 +1990,28 @@ img {
   max-width: 560px;
   padding: 20px;
 }
+.integrations .is-builtin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.integrations .is-builtin svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.integrations .int-break {
+  flex-basis: 100%;
+  height: 0;
+}
 .integrations span {
   padding: 10px 16px;
   font-size: 14px;
