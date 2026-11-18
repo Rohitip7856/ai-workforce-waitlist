@@ -1957,6 +1957,9 @@ img {
 .tile--wide {
   grid-column: span 2;
 }
+.tile--full {
+  grid-column: 1 / -1;
+}
 .tile-media {
   position: relative;
   height: 250px;
@@ -2582,7 +2585,7 @@ td.n::before {
 }
 
 /* =================================================================
-   Waitlist suspense: founder spots, classified agent, locks, rank, leads
+   Waitlist suspense: founder spots, locks, rank, leads
    ================================================================= */
 .founder-line {
   display: flex;
@@ -2610,16 +2613,8 @@ td.n::before {
   color: var(--accent);
 }
 
-.agent-chips .chip-classified {
-  gap: 7px;
-  color: var(--soft);
-  background: repeating-linear-gradient(135deg, var(--surface) 0 6px, var(--panel) 6px 12px);
-  border: 1px dashed var(--line);
-}
-.chip-classified svg,
 .lock-veil svg,
-.lead-lock svg,
-.classified svg {
+.lead-lock svg {
   width: 14px;
   height: 14px;
   fill: none;
@@ -2628,59 +2623,6 @@ td.n::before {
   stroke-linejoin: round;
 }
 
-/* Agent 04 tile */
-.tile-media--classified {
-  display: grid;
-  place-items: center;
-  background: #1c1814;
-}
-.classified {
-  display: grid;
-  justify-items: center;
-  gap: 14px;
-  color: #e9dccd;
-}
-.classified-id {
-  font-family: var(--dots);
-  font-size: 34px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  animation: flicker 3.2s infinite;
-}
-.classified-bars {
-  display: grid;
-  gap: 6px;
-  width: 160px;
-}
-.classified-bars i {
-  height: 9px;
-  border-radius: 3px;
-  background: #3a312a;
-}
-.classified-bars i:nth-child(2) {
-  width: 78%;
-}
-.classified-bars i:nth-child(3) {
-  width: 55%;
-}
-.classified svg {
-  width: 22px;
-  height: 22px;
-  color: #c0602f;
-}
-@keyframes flicker {
-  0%,
-  92%,
-  100% {
-    opacity: 1;
-  }
-  94% {
-    opacity: 0.35;
-  }
-  96% {
-    opacity: 0.85;
-  }
-}
 
 /* Locked workflow cards — open up once the visitor joins */
 .work.is-locked > :not(.lock-veil):not(.work-label) {
