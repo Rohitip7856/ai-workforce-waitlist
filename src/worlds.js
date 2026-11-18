@@ -311,7 +311,7 @@ const SALES_CARDS = [
     g.strokeStyle = '#fff';
     g.stroke();
     txt(g, 'Deal won', 134, 104, 36, '#fff', 700);
-    txt(g, 'Northwave Telecom', 40, 196, 34, '#cfd6f2', 500);
+    txt(g, 'Voltline Power', 40, 196, 34, '#cfd6f2', 500);
     txt(g, '₹3,40,000', 40, 262, 64, '#f5b942', 750);
   },
 ];

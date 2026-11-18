@@ -36,11 +36,10 @@ const smoothstep = (a, b, x) => {
 
 /* ---------- Floating nav tightens into a pill after the hero starts ---------- */
 const nav = document.querySelector('.nav');
-ScrollTrigger.create({
-  start: 60,
-  end: 'max',
-  onToggle: (st) => nav.classList.toggle('is-scrolled', st.isActive),
-});
+// Plain scroll check (a ScrollTrigger ending at 'max' switched the pill off at the very bottom of the page).
+const syncNav = () => nav.classList.toggle('is-scrolled', window.scrollY > 60);
+window.addEventListener('scroll', syncNav, { passive: true });
+syncNav();
 
 /* ---------- Hero entrance (the one page-load moment) ---------- */
 if (!reduced) {

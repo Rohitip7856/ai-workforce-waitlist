@@ -423,7 +423,7 @@ img {
 
 /* ---------- Feed (marquee of work) ---------- */
 .feed {
-  padding: 120px 0 40px;
+  padding: clamp(64px, 11vh, 120px) 0 40px;
   overflow: hidden;
 }
 .feed .section-title {
@@ -1278,7 +1278,7 @@ img {
 .night {
   width: min(var(--wrap), 100% - 2 * var(--gutter));
   margin: 0 auto;
-  padding: 120px 0 40px;
+  padding: clamp(64px, 11vh, 120px) 0 40px;
 }
 .night-copy {
   display: grid;
@@ -1396,7 +1396,7 @@ img {
 
 /* ---------- How it works ---------- */
 .how {
-  padding: 120px var(--gutter);
+  padding: clamp(64px, 11vh, 120px) var(--gutter);
 }
 .how-grid {
   display: grid;
@@ -1938,7 +1938,7 @@ img {
 
 /* ---------- Bento ---------- */
 .bento-wrap {
-  padding: 120px var(--gutter);
+  padding: clamp(64px, 11vh, 120px) var(--gutter);
 }
 .bento {
   display: grid;
@@ -2088,7 +2088,7 @@ img {
 
 /* ---------- Compare ---------- */
 .compare {
-  padding: 120px var(--gutter);
+  padding: clamp(64px, 11vh, 120px) var(--gutter);
 }
 .table-wrap {
   width: min(var(--wrap), 100%);
@@ -2178,7 +2178,7 @@ td.n::before {
   gap: 48px;
   width: min(var(--wrap), 100% - 2 * var(--gutter));
   margin: 0 auto;
-  padding: 120px 0;
+  padding: clamp(64px, 11vh, 120px) 0;
 }
 .faq-list details {
   border-bottom: 1px solid var(--line);
@@ -2229,7 +2229,7 @@ td.n::before {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  padding: 120px var(--gutter) 140px;
+  padding: clamp(64px, 11vh, 120px) var(--gutter) clamp(72px, 13vh, 140px);
   text-align: center;
   isolation: isolate;
 }
@@ -2797,7 +2797,7 @@ td.n::before {
 .leads {
   width: min(var(--wrap), 100% - 2 * var(--gutter));
   margin: 0 auto;
-  padding: 110px 0 40px;
+  padding: clamp(60px, 10vh, 110px) 0 40px;
 }
 .leads-head {
   text-align: center;
