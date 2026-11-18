@@ -5,8 +5,8 @@
  * (supabase/migrations/20261118_waitlist.sql), and visitors see their real place in line.
  * Without them, the form still works but only remembers the signup in this browser.
  */
-const SUPABASE_URL = (import.meta.env.VITE_SUPABASE_URL || '').replace(/\/$/, '');
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY || '';
+const SUPABASE_URL = (import.meta.env.VITE_SUPABASE_URL || '').trim().replace(/\/$/, '');
+const SUPABASE_KEY = (import.meta.env.VITE_SUPABASE_KEY || '').trim();
 export const HAS_BACKEND = Boolean(SUPABASE_URL && SUPABASE_KEY);
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
